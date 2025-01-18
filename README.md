@@ -65,19 +65,3 @@ pip freeze > requirements.txt
 ```
 
 - Nunca versione a pasta venv/. Ela já está listada no .gitignore.
-
-### Estrutura do Projeto
-
-PI1_ROBO_INTERFACE/
-├── app/                    # Diretório principal da aplicação Flask.
-│   ├── __init__.py         # Inicialização da aplicação Flask.
-│   ├── routes.py           # Definição das rotas da aplicação.
-│   ├── templates/          # Templates HTML (Jinja2).
-│   ├── static/             # Arquivos estáticos (CSS, JS, imagens).
-│   └── utils.py            # Funções auxiliares (opcional).
-├── instance/               # Configurações específicas (não versionadas).
-├── venv/                   # Ambiente virtual Python (não versionado).
-├── requirements.txt        # Lista de dependências do projeto.
-├── .gitignore              # Arquivos ignorados pelo Git.
-├── README.md               # Documentação do projeto.
-└── run.py                  # Ponto de entrada principal da aplicação Flask.
