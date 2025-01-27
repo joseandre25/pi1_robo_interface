@@ -3,40 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Interface do Robô</title>
-    <!-- Link para estilos -->
+    <title>Dashboard - Robô Sumô</title>
     <link rel="stylesheet" href="static/styles.css">
-    <!-- Plotly JS -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <!-- Cabeçalho -->
     <header class="header">
-        <div class="logo">
-            <img src="static/university-logo.png" alt="Logo da Universidade">
+        <div class="header-left">
+            <img src="static/university-logo.png" alt="UnB Logo" class="logo">
         </div>
-        <div class="header-text">
-            <h1>Projeto Integrador 1 - 2024.2 </h1>
-            <h2>Turma 02 | Grupo 02</h2>
+        <div class="header-center">
+            <h1>Robô Sumô | BotaENG</h1>
+        </div>
+        <div class="header-right">
+            <p>Projeto Integrador 1 - 2024.2</p>
+            <p>Turma 02 - Grupo 01 BotaENG</p>
         </div>
     </header>
 
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#" class="active">📊 Dashboard</a></li>
+            <li><a href="#">📡 Sensores</a></li>
+            <li><a href="#">🔧 Motores</a></li>
+            <li><a href="#">💡 LEDs</a></li>
+        </ul>
+    </aside>
+    
+
     <!-- Conteúdo Principal -->
-    <main class="dashboard">
-        <!-- Gráfico 1 -->
-        <div class="chart-container" id="chart1"></div>
+    <main class="main-content">
 
-        <!-- Gráfico 2 -->
-        <div class="chart-container" id="chart2"></div>
+        <!-- Status de Conexão -->
+        <section class="status-card card">
+            <h3>STATUS DE CONEXÃO 
+                <span id="connection-led" class="led green"></span>
+            </h3>
+            <p id="connection-status">CONNECTED...</p>
+        </section>
 
-        <!-- Gráfico 3 -->
-        <div class="chart-container" id="chart3"></div>
+        <!-- Cartões de Acionadores -->
+        <section class="card-container">
+            <div class="card">
+                <h3>MOTOR 
+                    <span id="motor-led" class="led red"></span>
+                </h3>
+                <div id="motor-status" class="error-message"></div> <!-- Mensagem de erro para o motor -->
+            </div>
+            <div class="card">
+                <h3>LEDS 
+                    <span id="leds-led" class="led green"></span>
+                </h3>
+                <div id="leds-status" class="error-message"></div> <!-- Mensagem de erro para os LEDs -->
+            </div>
+        </section>
 
-        <!-- Gráfico 4 -->
-        <div class="chart-container" id="chart4"></div>
+        <section class="card-container">
+            <div class="card sensor-card">
+                <h3>ULTRASSOM 
+                    <span id="ultrassom-led" class="led green"></span>
+                </h3>
+                <p id="ultrassom-status">Objeto encontrado</p>
+                <p id="ultrassom-distance"></p> <!-- Distância será atualizada dinamicamente -->
+                <div id="ultrassom-status-message" class="error-message"></div> <!-- Mensagem de erro para ultrassom -->
+            </div>
+            <div class="card sensor-card">
+                <h3>INFRA-VERMELHO 
+                    <span id="infrared-led" class="led red"></span>
+                </h3>
+                <p id="infrared-status" class="error-message"></p>
+                <p id="infrared-distance"></p> <!-- Distância será atualizada dinamicamente -->
+                <div id="infrared-status-message" class="error-message"></div> <!-- Mensagem de erro para infravermelho -->
+            </div>
+        </section>
+
+        <!-- Logs -->
+        <section class="logs-card card">
+            <h3>LOGS</h3>
+            <pre id="logs">timestamp: source - message...</pre>
+        </section>
     </main>
 
-    <!-- Scripts para renderizar gráficos -->
+    <!-- Script para Atualizar Dados -->
     <script src="static/scripts.js"></script>
 </body>
 </html>

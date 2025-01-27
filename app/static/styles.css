@@ -1,38 +1,122 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Cabeçalho */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header .logo {
+    height: 40px;
+}
+
+/* Menu Lateral */
+.sidebar {
+    position: fixed;
+    top: 60px; /* Altura do cabeçalho */
+    left: 0;
+    width: 200px; /* Largura do menu lateral */
+    height: calc(100% - 60px);
+    background-color: #031C30;
+    display: flex; /* Flexbox para centralizar os itens */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px; /* Espaçamento entre os itens */
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Tamanho da fonte */
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background-color: #003366;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 220px; /* Largura do menu lateral */
     padding: 20px;
-    background-color: #1f1f1f;
 }
 
-.logo img {
-    height: 50px;
+/* Cartões */
+.card-container {
+    display: grid; /* Usando grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas iguais */
+    gap: 30px; /* Espaçamento entre os cartões */
 }
 
-.header-text h1 {
-    font-size: 24px;
-}
-
-.header-text h2 {
-    font-size: 16px;
-}
-
-.dashboard {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.chart-container {
-    background-color: #2c2c2c;
+.card,
+.sensor-card,
+.status-card,
+.logs-card {
+    background-color: white;
+    margin-top: 20px; /* Espaço acima das seções de status e logs */
     border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos com LEDs à direita */
+.card h3,
+.status-card h3 {
+    display: flex; /* Alinha o texto e o LED na mesma linha */
+    justify-content: space-between; /* Texto à esquerda, LED à direita */
+}
+
+/* LEDs */
+.led {
+    width: 25px; /* Aumentado para melhor visibilidade */
+    height: 25px; /* Aumentado para melhor visibilidade */
+    border-radius: 50%;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+/* Logs */
+.logs-card pre {
+    background-color: #f8f9fa; /* Fundo claro para logs */
+    border-radius: 5px;
     padding: 10px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 0.9em;
 }
