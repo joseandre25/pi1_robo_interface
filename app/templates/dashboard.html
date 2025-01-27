@@ -50,11 +50,13 @@
                 <h3>MOTOR 
                     <span id="motor-led" class="led red"></span>
                 </h3>
+                <div id="motor-status" class="error-message"></div> <!-- Mensagem de erro para o motor -->
             </div>
             <div class="card">
                 <h3>LEDS 
                     <span id="leds-led" class="led green"></span>
                 </h3>
+                <div id="leds-status" class="error-message"></div> <!-- Mensagem de erro para os LEDs -->
             </div>
         </section>
 
@@ -65,13 +67,15 @@
                 </h3>
                 <p id="ultrassom-status">Objeto encontrado</p>
                 <p id="ultrassom-distance"></p> <!-- Distância será atualizada dinamicamente -->
+                <div id="ultrassom-status-message" class="error-message"></div> <!-- Mensagem de erro para ultrassom -->
             </div>
             <div class="card sensor-card">
                 <h3>INFRA-VERMELHO 
                     <span id="infrared-led" class="led red"></span>
                 </h3>
-                <p id="infrared-status"></p>
+                <p id="infrared-status" class="error-message"></p>
                 <p id="infrared-distance"></p> <!-- Distância será atualizada dinamicamente -->
+                <div id="infrared-status-message" class="error-message"></div> <!-- Mensagem de erro para infravermelho -->
             </div>
         </section>
 
